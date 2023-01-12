@@ -10,5 +10,19 @@ namespace DesafioPOO
             }
             return op;
         }
+
+        public static string obterValor (string Texto, bool IsNumeric = false) {
+            string valor = "";
+            Console.Write($" \n {Texto} ");
+            while (true) {
+                valor = Console.ReadLine();
+                if (IsNumeric && !double.TryParse(valor, out double _)){
+                    Console.Write(" \n Valor inválido! Digite um valor numérico: ");
+                    continue;
+                }
+                if (valor.Trim().Length>0) break;
+            }
+            return valor;
+        }
     }
 }
